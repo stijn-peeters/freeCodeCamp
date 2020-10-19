@@ -7,6 +7,105 @@
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
+    <h1 id="title">Welcome</h1>
+    <p id="description">This is a codecamp survey.</p>
+    <form action="" id="survey-form">
+      <div>
+        <label for="name" id="name-label"
+          >Name ;
+          <br />
+          <input required type="text" id="name" placeholder="John"
+        /></label>
+      </div>
+      <div>
+        <label for="email" id="email-label"
+          >Email
+          <br />
+          <input required type="email" id="email" placeholder="John@gmail.com"
+        /></label>
+      </div>
+      <div>
+        <label for="number" id="number-label"
+          >Whats more then 10 but less then 80?
+          <br />
+          <input
+            required
+            type="number"
+            max="80"
+            min="10"
+            id="number"
+            placeholder="enter a number here"
+        /></label>
+      </div>
+      <div>
+        <label for="dropdown" id="dropdown-label"
+          >Are you married?
+          <select name="married" id="dropdown">
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+          </select>
+        </label>
+      </div>
+      <div class="cats">
+        <p>Do you have a cat, wich one?</p>
+        <label for="cats">
+          <input type="radio" name="cat" id="Bengal" value="Bengal" />
+          Bengal
+        </label>
+        <label for="cats">
+          <input type="radio" name="cat" id="Siamese" value="Siamese" />
+          Siamese
+        </label>
+        <label for="cats">
+          <input type="radio" name="cat" id="Persian" value="Persian" />
+          Persian
+        </label>
+        <label for="cats">
+          <input type="radio" name="cat" id="Birman" value="Birman" />
+          Birman
+        </label>
+        <label for="cats">
+          <input type="radio" name="cat" id="none" value="none" />
+          none
+        </label>
+      </div>
+      <div class="dogs">
+        <p>Do you have dogs?</p>
+        <label for="dogs">
+          <input type="checkbox" name="dog" id="Golden" value="Golden" />
+          Golden
+        </label>
+        <label for="dogs">
+          <input type="checkbox" name="dog" id="German" value="German" />
+          German
+        </label>
+        <label for="dogs">
+          <input type="checkbox" name="dog" id="Pug" value="Pug" />
+          Pug
+        </label>
+        <label for="dogs">
+          <input type="checkbox" name="dog" id="Dobberman" value="Dobberman" />
+          Dobberman
+        </label>
+        <label for="dogs">
+          <input type="checkbox" name="dog" id="Labrador" value="Labrador" />
+          Labrador
+        </label>
+      </div>
+      <div>
+        <label for="questions-comments"
+          >Do you have any questions/comments?
+          <br />
+          <textarea
+            name="questions"
+            id="questions-comments"
+            cols="30"
+            rows="10"
+          ></textarea>
+        </label>
+      </div>
+      <button id="submit" type="submit">Done!</button>
+    </form>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
