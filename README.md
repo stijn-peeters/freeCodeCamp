@@ -5,3 +5,4 @@ Time to put your newly learnt skills to work! By working on projects you would h
 ## usecase
 
 This repo will be used for my projects in freeCodeCamp.
+Currently only testing is in order, styling will come after :)
