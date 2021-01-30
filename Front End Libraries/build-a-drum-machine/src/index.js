@@ -1,10 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import "./index.css";
+import App from "./components/App";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+const rootNode = document.querySelector("#root");
+ReactDOM.render(<App displayTextDefault="Drum machine" />, rootNode);
