@@ -1,0 +1,15 @@
+.calc {
+  margin: 20vh 100vh;
+  text-align: center;
+}
+.calc-pads {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto;
+}
+
+.calc-pad {
+  padding: 2em;
+  border: 2px solid black;
+  margin: 1px;
+}
