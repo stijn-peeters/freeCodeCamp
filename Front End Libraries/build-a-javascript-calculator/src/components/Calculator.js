@@ -11,19 +11,54 @@ export default class Calculator extends Component {
   }
 
   onInputClicked() {
-    const text = this.props.padItem.keyTrigger;
-    console.log(text);
+    let text = this.props.padItem.keyTrigger;
     let outcome = [];
-    if (text === "CE") {
-      outcome = [0];
-    } else if (text === "=") {
-      let calcstr = this.props.formula.join("");
-      // switch here
-      console.log(calcstr);
-    } else {
-      this.props.formula[0] === 0 ? this.props.formula.shift() : void 0;
-      outcome = [...this.props.formula, text];
-      console.log(outcome);
+    const last = this.props.formula.join("").split(/[^0-9.]/g);
+    switch (text) {
+      case "CE":
+        outcome = [0];
+        break;
+      case "=":
+        let calcstr = this.props.formula.join("");
+        // eslint-disable-next-line no-eval
+        outcome = [Math.round(eval(calcstr).toFixed(4) * 10000) / 10000];
+        break;
+      case ".":
+        last[last.length - 1].includes(".")
+          ? (text = "")
+          : this.props.formula[this.props.formula.length - 1] === "."
+          ? this.props.formula.pop()
+          : void 0;
+        outcome = [...this.props.formula, text];
+        break;
+      case "0":
+        this.props.formula === []
+          ? (text = "0")
+          : last[0] !== "0" && last[0] !== ""
+          ? (text = 0)
+          : (text = "");
+        outcome = [...this.props.formula, text];
+        break;
+      default:
+        this.props.formula[0] === 0 ? this.props.formula.shift() : void 0;
+
+        /[^0-9.]/g.test(text)
+          ? /[^0-9.]/g.test(this.props.formula[this.props.formula.length - 1])
+            ? text === "-"
+              ? void 0
+              : /[^0-9.]/g.test(
+                  this.props.formula[this.props.formula.length - 1]
+                ) &&
+                /[^0-9.]/g.test(
+                  this.props.formula[this.props.formula.length - 2]
+                )
+              ? this.props.formula.splice(this.props.formula.length - 2, 2)
+              : this.props.formula.pop()
+            : void 0
+          : void 0;
+
+        outcome = [...this.props.formula, text];
+        break;
     }
 
     this.props.updateDisplayText(outcome);

@@ -1,6 +1,6 @@
 .calc {
-  margin: 20vh 100vh;
   text-align: center;
+  margin: 20vh 100vh;
 }
 .calc-pads {
   display: grid;
